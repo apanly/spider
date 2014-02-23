@@ -1,0 +1,18 @@
+<div class="row">
+    <form class="form-signin" method="post" action="/login">
+        <h2 class="form-signin-heading" style="text-align: center;">登录</h2>
+        <div class="alert alert-error" id="tips" <?php if($errormsg):?> style="display:block;" <?php endif;?>>
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <strong><?php echo $errormsg;?></strong>
+        </div>
+        <input type="text" class="input-block-level" placeholder="请输入注册邮箱地址" name="username" id="username">
+        <input type="password" class="input-block-level" placeholder="请输入密码" name="userpwd" id="userpwd">
+        <span>
+            <a class="btn btn-link" href="/forgot">忘记密码?</a>
+            <a class="btn btn-link" href="/reg">注册账号?</a>
+            <span style="float: right;">
+                <button class="btn btn-info" type="submit">登录</button>
+            </span>
+        </span>
+    </form>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php foreach ($this->get_head_sections() as $section) { echo $section, "\n"; } ?>
+    <title><?php echo $this->get_title(); ?></title>
+    <?php $this->component('Resource_StyleBlocks'); ?>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="javascript:void(0);">YYabc通行证</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a href="javascript:void(0);">通行证</a></li>
+                    <li><a href="<?php echo uri::englishComUri();?>">YYabc</a></li>
+                    <li><a href="<?php echo uri::bookUri();?>">bookshare</a></li>
+                    <li><a href="http://tech.yyabc.org/%E5%85%B3%E4%BA%8Eta">关于我</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <?php $this->real_page() ?>
+    <hr/>
+    <footer>
+        <div class="row">
+            <div class="span4">
+                <p>
+                    ShareBook  &copy; 狂神<br/>
+                    QQ:1586538192<br/>
+                    Sina Weibo:<a href="http://www.weibo.com/qyclass/" target="_blank">Follow Me</a><br/>
+                    Email:Vincentguo@anjuke.com
+                </p>
+            </div>
+            <div class="span8" style="text-align: right;">
+                <img  style="width: 150px; height: 150px;" src="<?php echo PageHelper::pure_static_url('images/weixin/jigeshare.png');?>"/>
+                <img  style="width: 150px; height: 150px;" src="<?php echo PageHelper::pure_static_url('images/weixin/follow.jpeg');?>"/>
+            </div>
+        </div>
+    </footer>
+</div> <!-- /container -->
+<?php $this->component('Resource_ScriptBlocks','head'); ?>
+<?php $this->component('Resource_ScriptBlocks'); ?>
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+    _paq.push(["enableLinkTracking"]);
+
+    (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://knowing.yyabc.org/";
+        _paq.push(["setTrackerUrl", u+"piwik.php"]);
+        _paq.push(["setSiteId", "3"]);
+        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+        g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<noscript><p><img src="http://knowing.yyabc.org/piwik.php?idsite=3&amp;rec=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
